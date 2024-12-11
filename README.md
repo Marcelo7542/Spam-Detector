@@ -1,3 +1,5 @@
+English description below
+
 Classificador de Spam vs Ham(Não Spam)
 
 Eu criei este projeto com o objetivo de construir um modelo de aprendizado de máquina capaz de classificar mensagens de texto como "spam" ou "ham" (não spam). 
@@ -56,5 +58,56 @@ Recall (Ham/Não-Spam): 98% | Recall (Spam): 99%
 
 F1-Score: 98%
 
-A matriz de confusão indica um número baixo de falsos positivos e falsos negativos,
-mostrando a eficácia do modelo em classificar corretamente tanto as mensagens ham(Não-spam) quanto spam.
+Spam vs Ham (Non-Spam) Classifier
+
+I created this project with the goal of building a machine learning model capable of classifying text messages as "spam" or "ham" (non-spam).
+
+The dataset used contains labeled messages, and the objective was to train a Random Forest Classifier to achieve high accuracy in classifying new, unseen messages.
+
+Project Overview
+
+Data Loading and Exploration:
+
+The dataset was loaded from a CSV file, which contains columns for the message labels (spam or ham) and the corresponding text.
+
+My initial inspection of the data provided insights into the size and structure of the dataset.
+
+Text Preprocessing:
+
+HTML Removal: I implemented a function to identify and remove any HTML content from the messages.
+
+URL Extraction: I used the urlextract library to identify and extract any URLs present in the messages.
+
+Text Cleaning: The text was cleaned by converting it to lowercase, removing non-alphabetic characters, and filtering words using nltk.
+
+Data Visualization:
+
+The distribution of classes (spam and ham) in the messages was visualized through a bar chart.
+
+The 20 most frequent words in the cleaned dataset were "plotted" to provide an overview of the most common terms.
+
+Text Vectorization:
+
+I used TfidfVectorizer to convert the text data into numerical features, making them suitable for machine learning models. The training and test sets were split, and the vectorizer was applied accordingly.
+
+Model Construction and Hyperparameter Tuning:
+
+I trained a RandomForestClassifier to classify the text messages.
+
+The classifier's hyperparameters, such as the number of estimators and the depth of the trees, were tuned using RandomizedSearchCV to find the optimal configuration. I then manually adjusted the hyperparameters in the param_distributions to arrive at the best parameters.
+
+Model Evaluation:
+
+The performance of the model was evaluated on the test set, and metrics such as accuracy, recall, F1-score, and the confusion matrix were calculated.
+
+The tuned model achieved a test accuracy of 97.99%.
+
+Key Metrics:
+
+Test Accuracy: 97.99%
+
+Precision (Ham/Non-Spam): 99% | Precision (Spam): 95%
+
+Recall (Ham/Non-Spam): 98% | Recall (Spam): 99%
+
+F1-Score: 98%
